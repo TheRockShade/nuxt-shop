@@ -1,0 +1,9 @@
+.container {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: $grid_max_width;
+  background-clip: content-box;
+  box-sizing: border-box;
+  @include media_map((padding-left, padding-right), $grid_full_paddings);
+}

@@ -1,0 +1,46 @@
+//=======================
+// Точки для media-queries
+//=======================
+$media1200: 1200px;
+$media1024: 1024px;
+$media900: 900px;
+$media768: 768px;
+$media640: 640px;
+$media600: 600px;
+$media480: 480px;
+$media400: 400px;
+$media360: 360px;
+
+//=======================
+// Сетка
+//=======================
+$cols_wide: 8;
+$cols_desktop: 8;
+$cols_tablet: 8;
+$cols_mobile: 4;
+
+// Максимальная ширина сетки
+$grid_max_width: 1400px;
+
+// Боковые границы каждого столбца
+$grid_column_gap: 14px;
+
+// Боковые границы сетки
+$grid_paddings: (
+  ($media1200, 0): 96px,
+  ($media1024, $media1200): 40px,
+  ($media768, $media1024): 28px,
+  ($media640, $media768): 16px,
+  (0, $media640): 6px,
+);
+
+// Боковые границы сетки с прибавлением границы столбца
+$grid_full_paddings: ();
+@each $key, $value in $grid_paddings {
+  $grid_full_paddings: map-merge(
+    $grid_full_paddings,
+    (
+      $key: $value + $grid_column_gap,
+    )
+  );
+}
