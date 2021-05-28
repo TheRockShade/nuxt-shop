@@ -16,6 +16,10 @@
 <style lang="scss" scoped>
 .footer {
   padding: 60px 0;
+
+  @include media_interval(0, 900px) {
+    padding: 40px 0;
+  }
   &__inner {
     display: flex;
     justify-content: space-between;
