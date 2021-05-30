@@ -19,15 +19,22 @@
     }
   }
 
-  ul {
+  ul, ol {
+    margin-bottom: 20px;
     margin-left: 20px;
-
-    list-style: initial;
 
     > li {
       &:not(:last-child) {
         margin-bottom: 10px;
       }
     }
+  }
+
+  ul {
+    list-style: initial;
+  }
+
+  ol {
+    list-style: auto;
   }
 }
