@@ -1,6 +1,10 @@
 .text-styles {
   padding: 60px 0;
 
+  > *:last-child {
+    margin-bottom: 0;
+  }
+
   h2 {
     margin-bottom: 16px;
 

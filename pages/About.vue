@@ -1,6 +1,6 @@
 <template>
-  <section class="text-styles">
-    <div class="container">
+  <div class="about container">
+    <div class="text-styles">
       <h2>О компании</h2>
       <p class="bold">
         Интернет-магазин "Mono.ru" – лучшие смартфоны по низким ценам!
@@ -19,5 +19,5 @@
         <li>Доставка заказов Почтой по всей Стране за 5-15 дней</li>
       </ul>
     </div>
-  </section>
+  </div>
 </template>
