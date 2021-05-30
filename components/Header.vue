@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <div class="header__inner container">
-      <button class="header__button">
+      <button class="header__button" @click="toggleMenu">
         <span class="header__button-icon icon icon-bars"></span>
         <span class="header__button-text">Меню</span>
       </button>
@@ -23,7 +23,14 @@
 </template>
 
 <script>
-export default {}
+export default {
+  methods: {
+    toggleMenu() {
+      document.querySelector('body').classList.toggle('bg')
+      document.querySelector('.menu').classList.toggle('open')
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>

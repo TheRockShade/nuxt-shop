@@ -19,7 +19,7 @@ export default {
       socials: [
         { name: 'facebook', link: 'facebook.com' },
         { name: 'instagram', link: 'instagram.com' },
-        { name: 'telegram', link: 'telegram.com' },
+        { name: 'telegram', link: 'telegram.org' },
         { name: 'twitter', link: 'twitter.com' },
         { name: 'vk', link: 'vk.com' },
         { name: 'youtube', link: 'youtube.com' },
