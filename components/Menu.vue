@@ -36,7 +36,7 @@ export default {
         { name: 'О компании', link: '/about' },
         { name: 'Контакты', link: '/contacts' },
         { name: 'Доставка', link: '/delivery' },
-        { name: 'Личный кабинет', link: '/user' },
+        // { name: 'Личный кабинет', link: '/user' },
       ],
     }
   },
