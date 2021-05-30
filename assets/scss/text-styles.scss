@@ -1,0 +1,29 @@
+.text-styles {
+  padding: 60px 0;
+
+  h2 {
+    margin-bottom: 16px;
+
+    font-size: 24px;
+  }
+
+  p {
+    margin-bottom: 16px;
+
+    &.bold {
+      font-weight: 700;
+    }
+  }
+
+  ul {
+    margin-left: 20px;
+
+    list-style: initial;
+
+    > li {
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
