@@ -1,0 +1,28 @@
+{
+  "smartphones": [
+    {
+      "brand": "Redmi",
+      "model": "Note 7",
+      "price": 10000,
+      "id": 1
+    },
+    {
+      "brand": "Redmi",
+      "model": "Note 8",
+      "price": 11000,
+      "id": 2
+    },
+    {
+      "brand": "Redmi",
+      "model": "Note 9",
+      "price": 12000,
+      "id": 3
+    },
+    {
+      "brand": "Redmi",
+      "model": "Note 10",
+      "price": 13000,
+      "id": 4
+    }
+  ]
+}

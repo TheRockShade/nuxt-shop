@@ -7,7 +7,7 @@
         Тут вы можете добавить небольшое описание о вашем интернет-магазине.
         Какие у вас есть плюсы и можете добавить интересные факты о магазине
       </p>
-      <nuxt-link class="about__link" to="/contact">Подробнее</nuxt-link>
+      <nuxt-link class="about__link" to="/contacts">Подробнее</nuxt-link>
     </div>
   </section>
 </template>

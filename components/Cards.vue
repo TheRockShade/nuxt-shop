@@ -1,6 +1,6 @@
 <template>
   <ul class="cards">
-    <li v-for="good in goods" :key="good.length" class="cards__item">
+    <li v-for="good in PRODUCTS" :key="good.id" class="cards__item">
       <nuxt-link class="cards__link" :to="linkPath(good)">
         <img class="cards__img" :src="imgPath(good)" />
         <h6 class="cards__title">{{ good.brand + ' ' + good.model }}</h6>
@@ -10,41 +10,26 @@
         <button
           class="cards__btn cards__btn--favorites icon icon-favorites"
         ></button>
-        <button class="cards__btn cards__btn--basket icon icon-cart"></button>
+        <button
+          class="cards__btn cards__btn--basket icon icon-cart"
+          @click="addToCart(good)"
+        ></button>
       </div>
     </li>
   </ul>
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex'
 export default {
-  data() {
-    return {
-      goods: [
-        {
-          brand: 'Redmi',
-          model: 'Note 7',
-          price: 10000,
-        },
-        {
-          brand: 'Redmi',
-          model: 'Note 8',
-          price: 11000,
-        },
-        {
-          brand: 'Redmi',
-          model: 'Note 9',
-          price: 12000,
-        },
-        {
-          brand: 'Redmi',
-          model: 'Note 10',
-          price: 13000,
-        },
-      ],
-    }
+  computed: {
+    ...mapGetters(['PRODUCTS']),
+  },
+  mounted() {
+    this.GET_PRODUCTS_FROM_API()
   },
   methods: {
+    ...mapActions(['GET_PRODUCTS_FROM_API', 'ADD_TO_CART']),
     imgPath(item) {
       return `${(item.brand + '-' + item.model)
         .replace(/ /g, '-')
@@ -54,6 +39,9 @@ export default {
       return `catalog/${(item.brand + '-' + item.model)
         .replace(/ /g, '-')
         .toLowerCase()}`
+    },
+    addToCart(data) {
+      this.ADD_TO_CART(data)
     },
   },
 }
