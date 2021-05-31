@@ -4,7 +4,7 @@
       <h2 class="order__title">Оформление заказа</h2>
       <div class="order__price">
         <span class="order__price-text">Итого:</span>
-        <span class="order__price-sum">10000 Р</span>
+        <span class="order__price-sum">{{ totalPrice }} ₽</span>
       </div>
       <form action="POST" class="order__form order-form">
         <h3 class="order-form__title">Контактные данные</h3>
@@ -37,12 +37,34 @@
         <span class="order-form__label-text">Email</span>
         <input class="order-form__input" name="email" type="email" />
       </label>
-      <nuxt-link class="order-form__button" to="/thanks"
+      <nuxt-link class="order-form__button" to="/thanks" @click="deleteCart"
         >Подтвердить заказ</nuxt-link
       >
     </div>
   </section>
 </template>
+
+<script>
+import { mapGetters, mapActions } from 'vuex'
+export default {
+  computed: {
+    ...mapGetters(['CART']),
+    totalPrice() {
+      let sum = 0
+      this.CART.forEach((el) => {
+        sum += el.price
+      })
+      return sum
+    },
+  },
+  methods: {
+    ...mapActions(['DELETE_CART']),
+    deleteCart() {
+      this.DELETE_CART()
+    },
+  },
+}
+</script>
 
 <style lang="scss" scoped>
 .order {

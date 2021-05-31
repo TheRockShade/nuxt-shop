@@ -29,6 +29,9 @@ export const mutations = {
   REMOVE_FROM_CART(state, i) {
     state.cart.splice(i, 1)
   },
+  REMOVE_CART(state) {
+    state.cart.splice(0, state.cart.length)
+  },
 }
 export const actions = {
   GET_PRODUCTS_FROM_API({ commit }) {
@@ -44,6 +47,9 @@ export const actions = {
   },
   DELETE_FROM_CART({ commit }, i) {
     commit('REMOVE_FROM_CART', i)
+  },
+  DELETE_CART({ commit }) {
+    commit('REMOVE_CART')
   },
 }
 export const getters = {
