@@ -29,25 +29,6 @@ export const mutations = {
   REMOVE_FROM_CART(state, i) {
     state.cart.splice(i, 1)
   },
-  SET_FAVORITES(state, product) {
-    if (state.favorites.length) {
-      let isProductExists = false
-      state.favorites.map((item) => {
-        if (item.id === product.id) {
-          isProductExists = true
-        }
-        return ''
-      })
-      if (!isProductExists) {
-        state.favorites.push(product)
-      }
-    } else {
-      state.favorites.push(product)
-    }
-  },
-  REMOVE_FROM_FAVORITES(state, i) {
-    state.favorites.splice(i, 1)
-  },
 }
 export const actions = {
   GET_PRODUCTS_FROM_API({ commit }) {
@@ -64,12 +45,6 @@ export const actions = {
   DELETE_FROM_CART({ commit }, i) {
     commit('REMOVE_FROM_CART', i)
   },
-  ADD_TO_FAVORITES({ commit }, product) {
-    commit('SET_FAVORITES', product)
-  },
-  DELETE_FROM_FAVORITES({ commit }, i) {
-    commit('REMOVE_FROM_FAVORITES', i)
-  },
 }
 export const getters = {
   PRODUCTS(state) {
@@ -77,8 +52,5 @@ export const getters = {
   },
   CART(state) {
     return state.cart
-  },
-  FAVORITES(state) {
-    return state.favorites
   },
 }

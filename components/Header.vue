@@ -8,11 +8,6 @@
       <Logo mod="header__logo" />
       <ul class="header__bar">
         <li class="header__bar-item">
-          <nuxt-link class="header__bar-link" to="/favorites">
-            <span class="icon icon-favorites"></span>
-          </nuxt-link>
-        </li>
-        <li class="header__bar-item">
           <nuxt-link class="header__bar-link" to="/basket">
             <span class="icon icon-cart"></span>
           </nuxt-link>

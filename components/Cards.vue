@@ -8,9 +8,6 @@
       <div class="cards__bottom">
         <span class="cards__price">{{ good.price }} ₽</span>
         <button
-          class="cards__btn cards__btn--favorites icon icon-favorites"
-        ></button>
-        <button
           class="cards__btn cards__btn--basket icon icon-cart"
           @click="addToCart(good)"
         ></button>
@@ -110,16 +107,6 @@ export default {
 
     &:active {
       opacity: 0.5;
-    }
-
-    &--favorites {
-      position: absolute;
-      top: 0;
-      right: 0;
-
-      font-size: 20px;
-
-      opacity: 0.7;
     }
   }
 }
