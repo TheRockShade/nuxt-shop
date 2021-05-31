@@ -37,7 +37,7 @@
         <span class="order-form__label-text">Email</span>
         <input class="order-form__input" name="email" type="email" />
       </label>
-      <nuxt-link class="order-form__button" to="/thanks" @click="deleteCart"
+      <nuxt-link class="order-form__button" to="/thanks"
         >Подтвердить заказ</nuxt-link
       >
     </div>
@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
+import { mapGetters } from 'vuex'
 export default {
   computed: {
     ...mapGetters(['CART']),
@@ -55,12 +55,6 @@ export default {
         sum += el.price
       })
       return sum
-    },
-  },
-  methods: {
-    ...mapActions(['DELETE_CART']),
-    deleteCart() {
-      this.DELETE_CART()
     },
   },
 }

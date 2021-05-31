@@ -8,12 +8,25 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
 export default {
   layout: 'add',
   head() {
     return {
       title: 'Mono | Спасибо!',
     }
+  },
+  computed: {
+    ...mapGetters(['CART']),
+  },
+  mounted() {
+    this.deleteCart()
+  },
+  methods: {
+    ...mapActions(['DELETE_CART']),
+    deleteCart() {
+      this.DELETE_CART()
+    },
   },
 }
 </script>
