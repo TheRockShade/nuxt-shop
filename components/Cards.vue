@@ -1,10 +1,8 @@
 <template>
   <ul class="cards">
     <li v-for="good in PRODUCTS" :key="good.id" class="cards__item">
-      <nuxt-link class="cards__link" :to="linkPath(good)">
-        <img class="cards__img" :src="imgPath(good)" />
-        <h6 class="cards__title">{{ good.brand + ' ' + good.model }}</h6>
-      </nuxt-link>
+      <img class="cards__img" :src="imgPath(good)" />
+      <h6 class="cards__title">{{ good.brand + ' ' + good.model }}</h6>
       <div class="cards__bottom">
         <span class="cards__price">{{ good.price }} ₽</span>
         <button
@@ -19,6 +17,9 @@
 <script>
 import { mapActions, mapGetters } from 'vuex'
 export default {
+  data() {
+    return {}
+  },
   computed: {
     ...mapGetters(['PRODUCTS']),
   },
@@ -31,11 +32,6 @@ export default {
       return `${(item.brand + '-' + item.model)
         .replace(/ /g, '-')
         .toLowerCase()}.png`
-    },
-    linkPath(item) {
-      return `catalog/${(item.brand + '-' + item.model)
-        .replace(/ /g, '-')
-        .toLowerCase()}`
     },
     addToCart(data) {
       this.ADD_TO_CART(data)
