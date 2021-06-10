@@ -2,13 +2,7 @@
   <nuxt-link v-if="$route.name !== 'index'" class="logo" :class="mod" to="/">
     <img class="logo__item" :class="`${mod}-item`" src="logo.svg" alt="logo" />
   </nuxt-link>
-  <img
-    v-else
-    class="logo__item"
-    :class="`${mod}-item`"
-    src="logo.svg"
-    alt="logo"
-  />
+  <img v-else class="logo__item" :class="mod" src="logo.svg" alt="logo" />
 </template>
 
 <script>
@@ -23,7 +17,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.logo {
+.logo__item {
   transition: opacity 0.3s ease;
 
   &:hover,
@@ -40,8 +34,6 @@ export default {
     height: 27px;
   }
 
-  &__item {
-    pointer-events: none;
-  }
+  pointer-events: none;
 }
 </style>

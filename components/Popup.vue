@@ -10,7 +10,9 @@
         </button>
         <p class="popup__desc">{{ data.description }}</p>
       </div>
-      <button class="popup__close" @click="popupClose">Х</button>
+      <button class="popup__close" @click="popupClose">
+        <span class="popup__close-item icon icon-times"></span>
+      </button>
     </div>
   </div>
 </template>
@@ -60,6 +62,7 @@ export default {
     bottom: 100px;
     left: 100px;
     right: 100px;
+    overflow: scroll;
 
     padding: 50px;
     display: flex;
@@ -68,6 +71,18 @@ export default {
 
     background: #fff;
     border: 2px solid black;
+
+    @include media_interval(0, $media768) {
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      padding: 20px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
   }
 
   &.open {
@@ -76,10 +91,20 @@ export default {
 
   &__img {
     width: 500px;
+
+    @include media_interval(0, $media768) {
+      width: 80%;
+      margin-bottom: 20px;
+    }
   }
 
   &__info {
     max-width: 500px;
+
+    @include media_interval(0, $media768) {
+      width: 100%;
+      max-width: 100%;
+    }
   }
 
   &__title {
@@ -107,6 +132,26 @@ export default {
     color: #fff;
 
     background: #1b2738;
+  }
+
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 40px;
+    height: 40px;
+
+    background: #fff;
+    border-radius: 50%;
+
+    @include media_interval(0, $media768) {
+      top: 10px;
+      right: 10px;
+
+      width: 20px;
+      height: 20px;
+    }
   }
 }
 </style>
