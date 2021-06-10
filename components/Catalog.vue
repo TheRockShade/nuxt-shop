@@ -1,5 +1,6 @@
 <template>
   <section class="catalog">
+    <Popup v-if="item.brand" :data="item" @popupClose="closePopup" />
     <div class="catalog__inner container">
       <div v-if="$route.name !== 'index'" class="catalog__top">
         <h2 class="catalog__header">Каталог</h2>
@@ -11,7 +12,7 @@
         </button>
         <Select :options="sort" @select="optionSelect" />
       </div>
-      <Cards :sort="selectedType" />
+      <Cards :sort="selectedType" @good="getData" />
       <nuxt-link
         v-if="$route.name === 'index'"
         class="catalog__all"
@@ -42,6 +43,7 @@ export default {
       selected: '',
       selectedType: '',
       selectedTitle: 'Сортировать',
+      item: {},
     }
   },
   methods: {
@@ -53,6 +55,12 @@ export default {
       this.selectedType = option.value
       this.selectedTitle = option.name
       this.toggleSelect()
+    },
+    getData(data) {
+      this.item = data
+    },
+    closePopup() {
+      this.item = {}
     },
   },
 }

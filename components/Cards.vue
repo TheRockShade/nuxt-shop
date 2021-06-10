@@ -1,7 +1,7 @@
 <template>
   <ul class="cards">
     <li v-for="good in goodsArr()" :key="good.id" class="cards__item">
-      <img class="cards__img" :src="imgPath(good)" />
+      <img class="cards__img" :src="imgPath(good)" @click="popupOpen(good)" />
       <h6 class="cards__title">{{ good.brand + ' ' + good.model }}</h6>
       <div class="cards__bottom">
         <span class="cards__price">{{ good.price }} ₽</span>
@@ -59,6 +59,9 @@ export default {
           .reverse()
       }
       return this.PRODUCTS
+    },
+    popupOpen(data) {
+      this.$emit('good', data)
     },
   },
 }
