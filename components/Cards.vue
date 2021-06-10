@@ -1,6 +1,6 @@
 <template>
   <ul class="cards">
-    <li v-for="good in PRODUCTS" :key="good.id" class="cards__item">
+    <li v-for="good in goodsArr()" :key="good.id" class="cards__item">
       <img class="cards__img" :src="imgPath(good)" />
       <h6 class="cards__title">{{ good.brand + ' ' + good.model }}</h6>
       <div class="cards__bottom">
@@ -35,6 +35,12 @@ export default {
     },
     addToCart(data) {
       this.ADD_TO_CART(data)
+    },
+    goodsArr() {
+      if (this.$route.name === 'index') {
+        return this.PRODUCTS.slice(0, 4)
+      }
+      return this.PRODUCTS
     },
   },
 }

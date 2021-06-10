@@ -10,22 +10,78 @@
     {
       "brand": "Redmi",
       "model": "Note 8",
-      "price": 11000,
+      "price": 14000,
       "id": 2,
       "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
     },
     {
       "brand": "Redmi",
       "model": "Note 9",
-      "price": 12000,
+      "price": 16000,
       "id": 3,
       "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
     },
     {
       "brand": "Redmi",
       "model": "Note 10",
-      "price": 13000,
+      "price": 18000,
       "id": 4,
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
+    },
+    {
+      "brand": "Realme",
+      "model": "6 Pro",
+      "price": 21000,
+      "id": 5,
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
+    },
+    {
+      "brand": "Realme",
+      "model": "X3 SuperZoom",
+      "price": 30000,
+      "id": 6,
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
+    },
+    {
+      "brand": "Realme",
+      "model": "7 Pro",
+      "price": 24000,
+      "id": 7,
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
+    },
+    {
+      "brand": "Realme",
+      "model": "C11",
+      "price": 8500,
+      "id": 8,
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
+    },
+    {
+      "brand": "Samsung",
+      "model": "Galaxy A12",
+      "price": 12500,
+      "id": 9,
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
+    },
+    {
+      "brand": "Samsung",
+      "model": "Galaxy A32",
+      "price": 20000,
+      "id": 10,
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
+    },
+    {
+      "brand": "Samsung",
+      "model": "Galaxy A52",
+      "price": 27000,
+      "id": 11,
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
+    },
+    {
+      "brand": "Samsung",
+      "model": "Galaxy A72",
+      "price": 35000,
+      "id": 12,
       "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
     }
   ]

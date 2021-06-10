@@ -4,10 +4,10 @@
       <img class="about__icon" src="store.svg" alt="store" />
       <h4 class="about__title">О магазине Mono</h4>
       <p class="about__text">
-        Тут вы можете добавить небольшое описание о вашем интернет-магазине.
-        Какие у вас есть плюсы и можете добавить интересные факты о магазине
+        Mono - это современный, минималистичный, и удобный магазин смартфонов.
+        Наша задача - это создать комфорт при выборе смартфона и его покупке.
       </p>
-      <nuxt-link class="about__link" to="/contacts">Подробнее</nuxt-link>
+      <nuxt-link class="about__link" to="/about">Подробнее</nuxt-link>
     </div>
   </section>
 </template>
