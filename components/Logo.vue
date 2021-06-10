@@ -1,7 +1,14 @@
 <template>
-  <nuxt-link class="logo" :class="mod" to="/">
+  <nuxt-link v-if="$route.name !== 'index'" class="logo" :class="mod" to="/">
     <img class="logo__item" :class="`${mod}-item`" src="logo.svg" alt="logo" />
   </nuxt-link>
+  <img
+    v-else
+    class="logo__item"
+    :class="`${mod}-item`"
+    src="logo.svg"
+    alt="logo"
+  />
 </template>
 
 <script>

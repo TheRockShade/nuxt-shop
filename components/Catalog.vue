@@ -1,28 +1,22 @@
 <template>
   <section class="catalog">
     <div class="catalog__inner container">
-      <div v-if="page !== 'index'" class="catalog__top">
+      <div v-if="$route.name !== 'index'" class="catalog__top">
         <h2 class="catalog__header">Каталог</h2>
-        <button class="catalog__btn" @click="toggleSort">
-          <span class="catalog__btn-text">Сортировать</span>
+        <button class="catalog__btn" @click="toggleSelect">
+          <span class="catalog__btn-text">{{ selectedTitle }}</span>
           <span
             class="catalog__sort-item collection-order__icon icon-order"
           ></span>
         </button>
-        <ul class="catalog__sort">
-          <li class="catalog__sort-item">
-            <button class="catalog__sort-btn">По умолчанию</button>
-          </li>
-          <li class="catalog__sort-item">
-            <button class="catalog__sort-btn">По возрастанию цены</button>
-          </li>
-          <li class="catalog__sort-item">
-            <button class="catalog__sort-btn">По убыванию цены</button>
-          </li>
-        </ul>
+        <Select :options="sort" @select="optionSelect" />
       </div>
-      <Cards />
-      <nuxt-link v-if="page === 'index'" class="catalog__all" to="/catalog">
+      <Cards :sort="selectedType" />
+      <nuxt-link
+        v-if="$route.name === 'index'"
+        class="catalog__all"
+        to="/catalog"
+      >
         <span class="catalog__all-text">Смотреть всё</span>
         <span class="catalog__all-btn icon icon-angle-right"></span>
       </nuxt-link>
@@ -38,9 +32,27 @@ export default {
       default: 'index',
     },
   },
+  data() {
+    return {
+      sort: [
+        { name: 'По умолчанию', value: 'default' },
+        { name: 'По возрастанию цены', value: 'price up' },
+        { name: 'По убыванию цены', value: 'price down' },
+      ],
+      selected: '',
+      selectedType: '',
+      selectedTitle: 'Сортировать',
+    }
+  },
   methods: {
-    toggleSort() {
-      document.querySelector('.catalog__sort').classList.toggle('open')
+    toggleSelect() {
+      document.querySelector('.select').classList.toggle('open')
+    },
+    optionSelect(option) {
+      this.selected = option.name
+      this.selectedType = option.value
+      this.selectedTitle = option.name
+      this.toggleSelect()
     },
   },
 }
@@ -76,38 +88,6 @@ export default {
 
     &-item {
       font-size: 20px;
-    }
-  }
-
-  &__sort {
-    position: absolute;
-    top: 45px;
-    right: 0;
-
-    width: 170px;
-    display: none;
-    flex-direction: column;
-    z-index: 50;
-
-    border-radius: 4px;
-    box-shadow: 0 0 10px rgb(0 0 0 / 7%);
-
-    &.open {
-      display: flex;
-    }
-
-    &-btn {
-      width: 100%;
-      padding: 10px;
-
-      font-size: 14px;
-      text-align: left;
-
-      background: #fff;
-
-      &:hover {
-        background: lightgray;
-      }
     }
   }
 

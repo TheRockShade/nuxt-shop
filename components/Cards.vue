@@ -17,8 +17,16 @@
 <script>
 import { mapActions, mapGetters } from 'vuex'
 export default {
+  props: {
+    sort: {
+      type: String,
+      default: 'default',
+    },
+  },
   data() {
-    return {}
+    return {
+      goodsSortArr: [],
+    }
   },
   computed: {
     ...mapGetters(['PRODUCTS']),
@@ -39,6 +47,16 @@ export default {
     goodsArr() {
       if (this.$route.name === 'index') {
         return this.PRODUCTS.slice(0, 4)
+      }
+      if (this.sort === 'price up') {
+        this.goodsSortArr = [...this.PRODUCTS]
+        return this.goodsSortArr.sort((a, b) => (a.price > b.price ? 1 : -1))
+      }
+      if (this.sort === 'price down') {
+        this.goodsSortArr = [...this.PRODUCTS]
+        return this.goodsSortArr
+          .sort((a, b) => (a.price > b.price ? 1 : -1))
+          .reverse()
       }
       return this.PRODUCTS
     },
